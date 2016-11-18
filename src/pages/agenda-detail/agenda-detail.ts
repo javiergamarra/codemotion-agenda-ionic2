@@ -1,12 +1,7 @@
 import {Component} from "@angular/core";
 import {NavController, NavParams} from "ionic-angular";
+import {NativeStorage} from "ionic-native";
 
-/*
- Generated class for the AgendaDetail page.
-
- See http://ionicframework.com/docs/v2/components/#navigation for more info on
- Ionic pages and navigation.
- */
 @Component({
   selector: 'page-agenda-detail',
   template: `<ion-header>
@@ -15,20 +10,39 @@ import {NavController, NavParams} from "ionic-angular";
     </ion-navbar>
   </ion-header>
   <ion-content padding>
+  
+  
     <h1>{{talk?.contents?.title}}</h1>
     <p>{{talk?.contents?.description}}</p>
+   <ion-fab bottom right (click)="starTalk()" *ngIf="!starred">
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+     </ion-fab>
 </ion-content>`
 })
 export class AgendaDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
   }
+
+  starred = false;
 
   ionViewDidLoad() {
     console.log('Hello AgendaDetailPage Page');
     this.talk = this.navParams.get('talk');
-    console.log(this.talk)
+    console.log(this.talk);
+
+    NativeStorage.getItem(this.talk.id)
+      .then(x => this.starred = x)
+      .catch(err => {
+        this.starred = err.code != 2;
+        console.log(err)
+      });
+  }
+
+  starTalk() {
+    NativeStorage.setItem(this.talk.id, true)
+      .then(x => !this.starred)
+      .catch(err => console.log(err));
   }
 
   talk
