@@ -13,6 +13,6 @@ export class ContactPage {
     setTimeout(x => this.talk = 'hola!', 5000);
   }
 
-  talk = "Hi!"
+  talk:string = "Hi!"
 
 }
