@@ -7,10 +7,10 @@
 <ion-content>
   <ion-list>
     <button ion-item *ngFor="let talk of talks">
-      <span item-left>
+      <span item-left style="border-right: 4px solid red; padding-right: 10px">
         {{talk.start}}
       </span>
-      <span item-right style="border-left: 4px solid red; padding-left: 10px">
+      <span item-right>
         {{talk.contents.title}}
       </span>
     </button>
