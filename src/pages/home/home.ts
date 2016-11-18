@@ -21,6 +21,17 @@ export class HomePage implements OnInit {
     this.navCtrl.push(AgendaDetailPage, {talk})
   }
 
+  color(talk) {
+
+    if (!talk!.contents!.tags) {
+      return 'black'
+    }
+
+    const level = talk!.contents!.tags.Level;
+
+    return level == 'Intermediate' ? 'green' : level == 'Advanced' ? 'red' : 'blue';
+  }
+
   talks: Observable<any>
 
 }
