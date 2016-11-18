@@ -1,8 +1,8 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, Output, EventEmitter} from "@angular/core";
 @Component({
   selector: 'talk',
   template: `
-    <button ion-item (click)="itemClicked($event, talk)">
+    <button ion-item (click)="itemClicked()">
       <span item-left style="border-right: 4px solid; padding-right: 10px" [style.border-color]="color(talk)">
         {{talk.start}}
       </span>
@@ -13,12 +13,15 @@ import {Component, Input} from "@angular/core";
 })
 export class TalkComponent {
 
-  itemClicked($event, talk) {
-    // this.navCtrl.push(AgendaDetailPage, {talk})
-  }
-
   @Input()
   talk: any;
+
+  @Output()
+  talkClick: EventEmitter<any> = new EventEmitter();
+
+  itemClicked() {
+    this.talkClick.emit(this.talk);
+  }
 
   color() {
 
