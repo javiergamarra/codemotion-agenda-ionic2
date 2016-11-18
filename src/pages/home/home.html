@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let talk of talks">
+    <button ion-item *ngFor="let talk of talks | async">
       <span item-left style="border-right: 4px solid red; padding-right: 10px">
         {{talk.start}}
       </span>

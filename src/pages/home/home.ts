@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {AgendaService} from "../../providers/agenda";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'page-home',
@@ -9,12 +10,12 @@ import {AgendaService} from "../../providers/agenda";
 export class HomePage implements OnInit {
 
   ngOnInit(): void {
-    this.agendaService.getTalks().subscribe(talks => this.talks = talks);
+    this.talks = this.agendaService.getTalks();
   }
 
   constructor(public navCtrl: NavController, public agendaService: AgendaService) {
   }
 
-  talks
+  talks: Observable<any>
 
 }
