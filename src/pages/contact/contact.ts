@@ -12,4 +12,6 @@ export class ContactPage {
 
   }
 
+  talk = "Hi!"
+
 }
