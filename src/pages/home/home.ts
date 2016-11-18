@@ -1,26 +1,18 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {NavController} from "ionic-angular";
-import {Http, Headers} from "@angular/http";
-import "rxjs/Rx";
+import {AgendaService} from "../../providers/agenda";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor(public navCtrl: NavController, public http: Http) {
+  ngOnInit(): void {
+    this.agendaService.getTalks().subscribe(talks => this.talks = talks);
+  }
 
-    let headers = new Headers();
-    headers.append('accept', 'application/json');
-
-    this.http
-      .get('http://www.koliseo.com/codemotion/codemotion-madrid/r4p/5753906952929280/agenda', {headers: headers})
-      .map(res => res.json())
-      .do(x => console.log(x))
-      .map(data => data["days"][0])
-      .map(day => day["tracks"][0]["slots"])
-      .subscribe(talks => this.talks = talks);
+  constructor(public navCtrl: NavController, public agendaService: AgendaService) {
   }
 
   talks

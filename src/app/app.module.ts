@@ -5,6 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import {AgendaService} from "../providers/agenda";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     TabsPage
   ],
-  providers: []
+  providers: [AgendaService]
 })
 export class AppModule {}
