@@ -10,6 +10,7 @@ export class ContactPage {
 
   constructor(public navCtrl: NavController) {
 
+    setTimeout(x => this.talk = 'hola!', 5000);
   }
 
   talk = "Hi!"
