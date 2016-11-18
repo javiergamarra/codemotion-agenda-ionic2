@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {AgendaService} from "../providers/agenda";
 import {AgendaDetailPage} from "../pages/agenda-detail/agenda-detail";
-import {TalkComponent} from "../pages/home/talk";
+import {TalkComponent} from "../pages/talk/talk";
 
 @NgModule({
   declarations: [

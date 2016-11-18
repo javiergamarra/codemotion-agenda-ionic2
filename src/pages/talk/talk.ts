@@ -2,8 +2,8 @@ import {Component, Input, Output, EventEmitter} from "@angular/core";
 @Component({
   selector: 'talk',
   template: `
-    <button ion-item (click)="itemClicked()">
-      <span item-left style="border-right: 4px solid; padding-right: 10px" [style.border-color]="color(talk)">
+    <button ion-item (click)="talkClicked()">
+      <span item-left style="border-right: 4px solid; padding-right: 10px" [style.border-color]="color()">
         {{talk.start}}
       </span>
       <span item-right>
@@ -17,9 +17,9 @@ export class TalkComponent {
   talk: any;
 
   @Output()
-  talkClick: EventEmitter<any> = new EventEmitter();
+  talkClick: EventEmitter<any> = new EventEmitter<any>();
 
-  itemClicked() {
+  talkClicked() {
     this.talkClick.emit(this.talk);
   }
 
