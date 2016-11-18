@@ -11,7 +11,7 @@ export class HomePage {
 
   }
 
-  talk = {
+  talks = [{
     "id": 83004001,
     "start": "10:00",
     "end": "10:45",
@@ -62,6 +62,58 @@ export class HomePage {
     },
     "userId": 309007,
     "trackId": 5169458372935680
-  }
+  },
+    {
+      "id": 83014001,
+      "start": "11:00",
+      "end": "11:45",
+      "contents": {
+        "type": "TALK",
+        "id": 5689594649509888,
+        "title": "Lessons learnt trying to deploy Docker in production",
+        "description": "Poco a poco Docker va introduciéndose en nuestro flujo de trabajo, y nos preguntamos cual es la mejor forma de llevarlo a producción.\n¿Cómo podemos cambiar nuestro sistema de despliegue actual para utilizar Docker sin que sea un drama? ¿Qué pasos seguir?\n\nVeremos cómo poder utilizar Docker en producción sin liarnos a aprender un stack completamente nuevo como Kubernetes o Mesos, poniendo nuestros containers en el mismo stack que ya teníamos.",
+        "creationDate": 1466797747769,
+        "authors": [
+          {
+            "id": 57244004,
+            "uuid": "fiunchinho",
+            "name": "Jose Armesto",
+            "avatar": "https://storage.googleapis.com/k-avatars/57244004-954993ed",
+            "description": "Senior Software Developer en Schibsted Spain (infojobs, milanuncios, fotocasa, vibbo...), trabajó durante casi 5 años en Softonic.com, donde ocupaba el puesto de Software Architect. Lleva una vida paralela entre el mundo del desarrollo del software y de la enseñanza, y actualmente se encuentra en una cruzada personal por llevar el espíritu del Software Craftmanship al mundo DevOps.",
+            "feedback": {
+              "ratingAverage": 0.0,
+              "entriesCount": 0
+            },
+            "twitterAccount": "fiunchinho"
+          }
+        ],
+        "state": "ASSIGNED",
+        "tags": {
+          "Type of Proposal": [
+            "Talk"
+          ],
+          "Language of the talk/workshop": [
+            "Spanish"
+          ],
+          "Language": [
+            "Other"
+          ],
+          "Technology": [
+            "DevOps"
+          ],
+          "Level": [
+            "Intermediate"
+          ]
+        },
+        "totalVotes": 20,
+        "totalLikes": 91,
+        "feedback": {
+          "ratingAverage": 0.0,
+          "entriesCount": 0
+        }
+      },
+      "userId": 309007,
+      "trackId": 5169458372935680
+    }]
 
 }
