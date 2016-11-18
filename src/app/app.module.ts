@@ -6,6 +6,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {AgendaService} from "../providers/agenda";
+import {AgendaDetailPage} from "../pages/agenda-detail/agenda-detail";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {AgendaService} from "../providers/agenda";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AgendaDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -24,7 +26,8 @@ import {AgendaService} from "../providers/agenda";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    AgendaDetailPage
   ],
   providers: [AgendaService]
 })
