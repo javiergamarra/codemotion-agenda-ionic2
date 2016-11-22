@@ -8,6 +8,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {AgendaService} from "../providers/agenda";
 import {AgendaDetailPage} from "../pages/agenda-detail/agenda-detail";
 import {TalkComponent} from "../pages/talk/talk";
+import {MultiTabComponent} from "../pages/agenda-day/multi-tab";
+import {CustomTabComponent} from "../pages/agenda-day/custom-tab";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {TalkComponent} from "../pages/talk/talk";
     HomePage,
     TabsPage,
     AgendaDetailPage,
-    TalkComponent
+    TalkComponent,
+    MultiTabComponent,
+    CustomTabComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,7 +33,8 @@ import {TalkComponent} from "../pages/talk/talk";
     ContactPage,
     HomePage,
     TabsPage,
-    AgendaDetailPage
+    AgendaDetailPage,
+    CustomTabComponent
   ],
   providers: [AgendaService]
 })

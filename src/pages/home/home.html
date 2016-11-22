@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+
   <ion-list>
 
     <talk [talk]="talk" *ngFor="let talk of talks | async" (talkClick)="itemClicked($event)"></talk>
