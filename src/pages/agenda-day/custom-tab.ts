@@ -1,10 +1,5 @@
 import {Component} from "@angular/core";
-import {ModalController} from "ionic-angular";
-
-const CUSTOM_ITEMS = [{
-  'title': 'custom',
-  'units': 1
-}];
+import {ModalController, NavParams} from "ionic-angular";
 
 @Component({
   selector: 'custom-tab',
@@ -12,9 +7,15 @@ const CUSTOM_ITEMS = [{
 })
 export class CustomTabComponent {
 
-  items: Array<any> = CUSTOM_ITEMS;
+  items: Array<any>;
 
-  constructor(public modalCtrl: ModalController) {
+  constructor(public modalCtrl: ModalController, public navParams: NavParams) {
+  }
+
+  ionViewDidEnter() {
+    console.log(this.navParams);
+
+    this.items = this.navParams.data;
   }
 
 }
